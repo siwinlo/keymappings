@@ -1,7 +1,6 @@
 /*
 Copyright 2019 @foostan
 Copyright 2020 Drashna Jaelre <@drashna>
-Copyright 2021 Siwin Lo
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,10 +14,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-
-Note:
-Make sure that tapdance is enabled in config.h and rules.mk
 */
 
 #include QMK_KEYBOARD_H
@@ -69,11 +64,11 @@ TD(TD_LSFT_CAPS), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                     
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 TD(TD_GRV_ESC), KC_LT,  KC_LBRC, KC_LPRN, KC_LCBR, KC_MINS,                      KC_UNDS, KC_RCBR, KC_RPRN, KC_RBRC, KC_GT, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT,   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  TD(TD_MINS_UNDS),
+      KC_LSFT,   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_MINS,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, KC_PIPE, KC_PLUS, KC_EQL,  KC_ENT,
+      KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, KC_EQL,  KC_BSLS,  KC_ENT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI, XXXXXXX, XXXXXXX,     KC_SPC,  XXXXXXX, KC_RALT
+                                          KC_LGUI, XXXXXXX, _______,     KC_SPC,  XXXXXXX, KC_RALT
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -85,9 +80,9 @@ TD(TD_GRV_ESC), KC_LT,  KC_LBRC, KC_LPRN, KC_LCBR, KC_MINS,                     
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_UNDS,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PLUS, KC_PIPE,
+      KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, KC_PLUS, KC_PIPE, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI, XXXXXXX, XXXXXXX,     KC_SPC, XXXXXXX, KC_RALT
+                                          KC_LGUI, XXXXXXX, XXXXXXX,     KC_SPC, _______, KC_RALT
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -101,7 +96,7 @@ TD(TD_GRV_ESC), KC_LT,  KC_LBRC, KC_LPRN, KC_LCBR, KC_MINS,                     
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    XXXXXXX,  KC_PGDN, KC_PGUP, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI, _______,  KC_ENT,     KC_SPC, _______, KC_RALT
+                                         KC_LGUI, _______, XXXXXXX,     KC_SPC, XXXXXXX, KC_RALT
                                       //`--------------------------'  `--------------------------'
   ),
 };
