@@ -62,7 +62,7 @@ TD(TD_LSFT_CAPS), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                     
 // numbers and brackets
   [1] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-TD(TD_GRV_ESC), KC_LT,  KC_LBRC, KC_LPRN, KC_LCBR, KC_MINS,                      KC_UNDS, KC_RCBR, KC_RPRN, KC_RBRC, KC_GT, KC_BSPC,
+   TD(TD_GRV_ESC), KC_LT,  KC_LBRC, KC_LPRN, KC_LCBR, KC_MINS,                      KC_EQL, KC_RCBR, KC_RPRN, KC_RBRC, KC_GT, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_MINS,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -90,7 +90,7 @@ TD(TD_GRV_ESC), KC_LT,  KC_LBRC, KC_LPRN, KC_LCBR, KC_MINS,                     
 // navigation and macros
   [3] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        RESET, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      KC_ESC, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,  INSPECT,    TERM,  EMOJI, SCRSHOT, XXXXXXX,                      KC_LEFT, KC_DOWN,  KC_UP, KC_RIGHT, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -112,7 +112,7 @@ return OLED_ROTATION_180;
 #define L_ADJUST 8
 
 void oled_render_layer_state(void) {
-    oled_write_P(PSTR("Layer: "), false);
+    oled_write_P(PSTR(""), false);
     switch (layer_state) {
         case L_BASE:
             oled_write_ln_P(PSTR("Qwerty"), false);
@@ -187,12 +187,15 @@ void oled_render_logo(void) {
 }
 
 void oled_task_user(void) {
-    if (!is_master) {
-        oled_render_layer_state();
-        oled_render_keylog();
-    } else {
-        oled_render_logo();
-    }
+    // if (!is_master) {
+    //     oled_render_layer_state();
+    //     oled_render_keylog();
+    // } else {
+    //     oled_render_logo();
+    // }
+
+    oled_render_layer_state();
+    oled_render_keylog();
 }
 
 // Macros
